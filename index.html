@@ -46,20 +46,16 @@
 <script>
 	var today = new Date();
 	$(document).ready(function(){
-		alert(today);
-		alert("Talence take off second.");
+		//alert(today);
+		//alert("Talence take off second.");
 		$("#tb_word").text(today.toString());
-		var parentElement = document.getElementById('deviceready');
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
 		setTimeout("showTime()",1000);
 		//setInterval("showTime()","1000");
 	});
 	function showTime(){
 		today = new Date();
 		$("#tb_word").text(today.toString());
+		setTimeout("showTime()",1000);
 	}  // showLogin();    
 	function form_submit(){
 		alert("Send");

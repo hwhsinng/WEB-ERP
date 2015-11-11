@@ -33,8 +33,9 @@
             <h1>PhoneGap</h1>
 			<form id="default_form" name="default_form">
 				<div>
-					<input id="tb_word" name="tb_word" type="text" value="Second Test 2"/>
+					<div id="tb_word" name="tb_word" type="text" style="width:400px;" value=""></div>
 					<input id="bt_send" name="bt_send" type="button" value="Send Button" onclick="form_submit();"/>
+					<br/>
 					<span id="alpha"></span><br/>
 					<span id="beta"></span><br/>
 					<span id="gamma"></span><br/>
@@ -42,12 +43,9 @@
 			</form>
         </div>
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    </body>
-</html>
 <script>
+	var today = new Date();
 	$(document).ready(function(){
-		var today = new Date();
-		
 		
 		alert("Talence take off second.");
 		
@@ -56,13 +54,13 @@
         var receivedElement = parentElement.querySelector('.received');
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-		function showTime(){    
-			$("#tb_word").val(today.getTime());   
-		}  // showLogin();    
+		
 		setInterval("showTime()","1000");
 	});
-	
-	
+	function showTime(){
+		today = new Date();
+		$("#tb_word").text(today);
+	}  // showLogin();    
 	function form_submit(){
 		alert("Send");
 	}
@@ -91,3 +89,6 @@
 	}
 	
 </script>
+
+    </body>
+</html>

@@ -46,7 +46,9 @@
 </html>
 <script>
 	$(document).ready(function(){
-	
+		var today = new Date();
+		
+		
 		alert("Talence take off second.");
 		
 		var parentElement = document.getElementById('deviceready');
@@ -55,6 +57,11 @@
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 	});
+	function showTime(){    
+		$("#tb_word").val(today.getTime());   
+	}  // showLogin();    
+	setInterval("showTime()","1000");
+	
 	function form_submit(){
 		alert("Send");
 	}

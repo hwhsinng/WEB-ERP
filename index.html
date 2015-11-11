@@ -33,12 +33,17 @@
             <h1>PhoneGap</h1>
 			<form id="default_form" name="default_form">
 				<div>
-					<div id="tb_word" name="tb_word" type="text" style="width:400px;" value=""></div>
-					<input id="bt_send" name="bt_send" type="button" value="Send Button" onclick="form_submit();"/>
-					<br/>
+					Time:<div id="tb_word" name="tb_word" type="text" style="width:500px;" value=""></div><br/>
 					<span id="alpha"></span><br/>
 					<span id="beta"></span><br/>
 					<span id="gamma"></span><br/>
+					<input id="bt_send" name="bt_send" type="button" value="Send Button" onclick="form_submit();"/><br/>
+					<div id="tb_area" name="tb_area" style="display:none;">
+						<input id="tb_alpha" name="tb_alpha"></br>
+						<input id="tb_beta" name="tb_beta"></br>
+						<input id="tb_gamma" name="tb_gamma"></br>
+						<input id="bt_hide" name="bt_hide" type="button" value="Hide Button" onclick="div_hide();"/>
+					</div>
 				</div>
 			</form>
         </div>
@@ -58,8 +63,10 @@
 		setTimeout("showTime()",1000);
 	}  // showLogin();    
 	function form_submit(){
-		alert("Send");
-		$("#tb_word").text(today.toString());
+		$("#tb_area").show();
+		$("#tb_alpha").val($("#alpha").text());
+		$("#tb_beta").val($("#beta").text());
+		$("#tb_gamma").val($("#gamma").text());
 	}
 	
 	window.addEventListener('deviceorientation', function(event) {

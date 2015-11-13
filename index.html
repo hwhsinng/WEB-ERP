@@ -94,6 +94,15 @@
 	}else{
 		document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
 	}
+	var url = "http://www.our-program.com.tw/phonegap/JSON/JSON_test.php";
+	jQuery.ajax({
+	url:url,
+	type: 'GET',
+	success: function(rsdata){
+		var STmp = rsdata.rows;
+		for(var key in STmp)
+			$("#tb_area").append("<p>" + key + ":" + STmp[key] +"</p>");
+	}});
 	
 </script>
 

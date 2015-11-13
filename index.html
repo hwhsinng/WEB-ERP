@@ -100,8 +100,11 @@
 	type: 'GET',
 	success: function(rsdata){
 		var STmp = rsdata.rows;
-		for(var key in STmp)
+		
+		for(var key in STmp){
 			$("#tb_area").append("<p>" + key + ":" + STmp[key] +"</p>");
+			alert(key + ":" + STmp[key]);
+		}			
 	}});
 	
 </script>

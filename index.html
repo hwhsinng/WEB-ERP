@@ -52,6 +52,9 @@
         </div>
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script>
+$(document).ajaxError(function(e,xhr,opt){
+    alert(xhr.statusText + " requesting " + opt.url + '\n' + xhr.responseText);
+});
 	var today = new Date();
 	$(document).ready(function(){
 		//alert(today);
@@ -108,11 +111,11 @@
 			$("#tb_area2").append("<p>" + key + ":" + STmp[key] +"</p>");
 			alert(key + ":" + STmp[key]);
 		}			
-	},
-	error: function(e,xhr,opt){
+	}
+	/*error: function(e,xhr,opt){
         alert("fail");
 		alert(xhr.statusText + " requesting " + opt.url + '\n' + xhr.responseText);
-    }
+    }*/
 	});
 	
 </script>

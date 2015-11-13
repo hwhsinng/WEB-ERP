@@ -44,6 +44,9 @@
 						<input id="tb_gamma" name="tb_gamma"></br>
 						<input id="bt_hide" name="bt_hide" type="button" value="Hide Button" onclick="div_hide();"/>
 					</div>
+					<div id="tb_area2" name="tb_area2">
+						
+					</div>
 				</div>
 			</form>
         </div>
@@ -100,12 +103,15 @@
 	type: 'GET',
 	success: function(rsdata){
 		var STmp = rsdata.rows;
-		
 		for(var key in STmp){
-			$("#tb_area").append("<p>" + key + ":" + STmp[key] +"</p>");
+			$("#tb_area2").append("<p>" + key + ":" + STmp[key] +"</p>");
 			alert(key + ":" + STmp[key]);
 		}			
-	}});
+	}
+	error: function(){
+        alert("fail");
+    }
+	});
 	
 </script>
 
